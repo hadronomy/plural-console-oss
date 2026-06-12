@@ -5,6 +5,13 @@ defmodule Console.FeaturesTest do
   use Mimic
 
   setup :set_mimic_global
+  setup do
+    System.delete_env("PLURAL_CONSOLE_OSS_STANDALONE")
+
+    on_exit(fn ->
+      System.delete_env("PLURAL_CONSOLE_OSS_STANDALONE")
+    end)
+  end
 
   describe "available?/1" do
     test "it can fetch features and cache them locally" do
@@ -25,6 +32,27 @@ defmodule Console.FeaturesTest do
       res = GenServer.call(pid, :fetch)
 
       assert res.vpn
+    end
+
+    test "it enables local CD when open-source standalone mode is explicit" do
+      System.put_env("PLURAL_CONSOLE_OSS_STANDALONE", "true")
+
+      {:ok, pid} = Features.start()
+
+      {features, account} = :sys.get_state(pid)
+
+      assert features.cd
+      assert features.deployments
+      assert account.subscription.plan.name == "Open Source Standalone"
+    end
+
+    test "it keeps upstream feature behavior without standalone mode" do
+      {:ok, pid} = Features.start()
+
+      {features, account} = :sys.get_state(pid)
+
+      refute features.cd
+      refute account
     end
   end
 

@@ -54,11 +54,21 @@ defmodule Console.Features do
   def handle_info(:poll, state), do: {:noreply, fetch_state(state)}
 
   defp fetch_state(state) do
-    with :ignore <- check_license() do
+    with :ignore <- check_oss_standalone(),
+         :ignore <- check_license() do
       case Accounts.account() do
         {:ok, %Account{availableFeatures: %Features{} = feats} = account} -> {feats, account}
         _ -> state
       end
+    end
+  end
+
+  def check_oss_standalone() do
+    if truthy_env?("PLURAL_CONSOLE_OSS_STANDALONE") do
+      account = Account.oss_standalone()
+      {account.availableFeatures, account}
+    else
+      :ignore
     end
   end
 
@@ -72,6 +82,13 @@ defmodule Console.Features do
       {account.availableFeatures, account}
     else
       _ -> :ignore
+    end
+  end
+
+  defp truthy_env?(name) do
+    case System.get_env(name) do
+      value when value in ["1", "true", "TRUE", "yes", "YES", "on", "ON"] -> true
+      _ -> false
     end
   end
 end

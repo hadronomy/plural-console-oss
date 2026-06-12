@@ -207,6 +207,15 @@ defmodule Console.Plural.Account do
     }
   end
 
+  def oss_standalone() do
+    %__MODULE__{
+      availableFeatures: Features.everything(),
+      subscription: %Subscription{
+        plan: %Plan{name: "Open Source Standalone", id: @dummy_id, period: "YEARLY"}
+      }
+    }
+  end
+
   def spec() do
     %__MODULE__{
       availableFeatures: %Features{},
