@@ -13,7 +13,8 @@ permissions:
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/plural-console-oss
-  IMAGE_TAG: 0.12.24-oss.2
+  IMAGE_TAG: 0.12.24-oss.3
+  VITE_PROD_SECRET_KEY: plural-console-oss
 
 jobs:
   image:
@@ -43,6 +44,8 @@ jobs:
           push: true
           provenance: true
           sbom: true
+          build-args: |
+            VITE_PROD_SECRET_KEY=${{ env.VITE_PROD_SECRET_KEY }}
           tags: |
             ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
             ${{ env.IMAGE_NAME }}:master

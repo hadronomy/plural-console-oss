@@ -9,10 +9,10 @@ export const CHALLENGE_KEY = 'oauth-challenge'
 const { MODE, VITE_DEV_SECRET_KEY, VITE_PROD_SECRET_KEY } = import.meta.env
 const secretKey =
   MODE === 'production'
-    ? VITE_PROD_SECRET_KEY
+    ? VITE_PROD_SECRET_KEY || 'plural-console-oss'
     : MODE === 'test'
       ? '1234567890'
-      : VITE_DEV_SECRET_KEY
+      : VITE_DEV_SECRET_KEY || VITE_PROD_SECRET_KEY || 'plural-console-oss'
 const encryptStorage = new EncryptStorage(secretKey)
 
 export function wipeToken() {
