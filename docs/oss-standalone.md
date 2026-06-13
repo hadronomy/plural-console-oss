@@ -20,3 +20,7 @@ ghcr.io/hadronomy/plural-console-oss:<upstream-app-version>-oss.<patch>
 
 Each image tag should correspond to an upstream Plural Console app version plus
 the smallest possible fork patch.
+
+For single-cluster self-hosting, set `EXT_HOST` to an internal HTTP Console
+service URL so deployment operators fetch rendered tarballs through the
+Kubernetes service network while users keep using the public `HOST`.

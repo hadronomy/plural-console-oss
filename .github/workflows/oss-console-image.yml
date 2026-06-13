@@ -13,7 +13,7 @@ permissions:
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/plural-console-oss
-  IMAGE_TAG: 0.12.24-oss.1
+  IMAGE_TAG: 0.12.24-oss.2
 
 jobs:
   image:

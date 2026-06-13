@@ -78,6 +78,7 @@ git_url = get_env("GIT_URL")
 
 add_https = fn
   "https://" <> _ = url -> url
+  "http://" <> _ = url -> url
   url -> "https://#{url}"
 end
 
