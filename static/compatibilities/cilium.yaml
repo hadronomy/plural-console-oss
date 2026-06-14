@@ -1322,8 +1322,7 @@ versions:
         release warning)., 'If your Helm values contain an invalid `kubeProxyReplacement`
         setting, upgrades may now **fail** at Helm time due to new validation (v1.12.11).']
   chart_version: 1.12.11
-  images: ['quay.io/cilium/cilium:v1.12.11@sha256:3fd8d9a6130783c245d90658ca379a7db88f249ec69464450fb53490cfbd7c55',
-    'quay.io/cilium/operator-generic:v1.12.11@sha256:8fad1da87c9f308c21ad54784c91c0fc92dc620e2781561473e2c8e4f871eb29']
+  images: []
 - version: 1.12.0
   kube: ['1.26', '1.25', '1.24']
   requirements: []
