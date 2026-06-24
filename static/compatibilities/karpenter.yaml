@@ -133,7 +133,7 @@ versions:
         integrations).]
     breaking_changes: []
   chart_version: 1.2.0
-  images: ['public.ecr.aws/karpenter/controller:1.2.0@sha256:24b8fe57f02b70fc4ab3cd6d5aa0d73a6f3d0c62ca5d23d7ffc8853eac01e324']
+  images: []
 - version: 1.0.5
   kube: ['1.31', '1.30']
   requirements: []
