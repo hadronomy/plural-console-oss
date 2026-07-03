@@ -4,6 +4,13 @@ helm_repository_url: https://helm.cilium.io/
 helm_values: debug.verbose=flow
 eolApiSlug: cilium
 versions:
+- version: 1.19.5
+  kube: ['1.36', '1.35', '1.34']
+  requirements: []
+  incompatibilities: []
+  summary: null
+  chart_version: 1.19.5
+  images: []
 - version: 1.19.4
   kube: ['1.36', '1.35', '1.34']
   requirements: []
