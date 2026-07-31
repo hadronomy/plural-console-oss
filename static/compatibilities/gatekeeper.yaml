@@ -5,6 +5,13 @@ helm_repository_url: https://open-policy-agent.github.io/gatekeeper/charts
 chart_name: gatekeeper
 eolApiSlug: gatekeeper
 versions:
+- version: 3.23.0
+  kube: ['1.36', '1.35', '1.34']
+  requirements: []
+  incompatibilities: []
+  summary: null
+  chart_version: 3.23.0
+  images: ['curlimages/curl:8.20.0', 'openpolicyagent/gatekeeper-crds:v3.23.0', 'openpolicyagent/gatekeeper:v3.23.0']
 - version: 3.22.2
   kube: ['1.36', '1.35', '1.34']
   requirements: []
@@ -32,7 +39,7 @@ versions:
         enforcement actions without additional configuration. Validate this aligns
         with your expectations if you rely on VAP integration.']
   chart_version: 3.22.2
-  images: ['curlimages/curl:8.12.0', 'openpolicyagent/gatekeeper-crds:v3.22.2', 'openpolicyagent/gatekeeper:v3.22.2']
+  images: []
 - version: 3.22.0
   kube: ['1.35', '1.34', '1.33']
   requirements: []
@@ -96,6 +103,7 @@ versions:
         notes compared to 3.21.0.]
   chart_version: 3.21.1
   images: ['curlimages/curl:8.12.0', 'openpolicyagent/gatekeeper-crds:v3.21.1', 'openpolicyagent/gatekeeper:v3.21.1']
+  eolAt: '2026-07-09'
 - version: 3.21.0
   kube: ['1.34', '1.33', '1.32']
   requirements: []
@@ -139,6 +147,7 @@ versions:
         then be removed).']
   chart_version: 3.21.0
   images: ['curlimages/curl:8.12.0', 'openpolicyagent/gatekeeper-crds:v3.21.0', 'openpolicyagent/gatekeeper:v3.21.0']
+  eolAt: '2026-07-09'
 - version: 3.20.1
   kube: ['1.34', '1.33', '1.32']
   requirements: []
@@ -252,7 +261,7 @@ versions:
         \ includes `--operation=generate`, and if you don\u2019t run audit you must\
         \ add it to the controller-manager deployment."]
   chart_version: 3.19.0
-  images: ['curlimages/curl:8.12.0', 'openpolicyagent/gatekeeper-crds:v3.19.0', 'openpolicyagent/gatekeeper:v3.19.0']
+  images: []
   eolAt: '2025-11-19'
 - version: 3.18.3
   kube: ['1.33', '1.32', '1.31']
@@ -514,7 +523,7 @@ versions:
         updates addressing multiple CVEs/advisories.']
     breaking_changes: []
   chart_version: 3.14.2
-  images: ['curlimages/curl:7.83.1', 'openpolicyagent/gatekeeper-crds:v3.14.2', 'openpolicyagent/gatekeeper:v3.14.2']
+  images: []
   eolAt: '2024-05-09'
 - version: 3.14.1
   kube: ['1.29', '1.28', '1.27']
@@ -563,7 +572,7 @@ versions:
         new pod labels) can be *operationally breaking* if you rely on exact label
         matches/selectors in policies, monitoring, or automation.']
   chart_version: 3.14.1
-  images: ['curlimages/curl:7.83.1', 'openpolicyagent/gatekeeper-crds:v3.14.1', 'openpolicyagent/gatekeeper:v3.14.1']
+  images: []
   eolAt: '2024-05-09'
 - version: 3.14.0
   kube: ['1.28', '1.27', '1.26']

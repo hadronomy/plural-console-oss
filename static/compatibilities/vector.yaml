@@ -3,6 +3,13 @@ git_url: https://github.com/vectordotdev/vector/
 release_url: https://github.com/vectordotdev/vector/releases/tag/v{vsn}
 helm_repository_url: https://helm.vector.dev/
 versions:
+- version: 0.57.0
+  kube: ['1.36', '1.35', '1.34']
+  requirements: []
+  incompatibilities: []
+  summary: null
+  chart_version: 0.57.0
+  images: ['docker.io/timberio/vector:0.57.0-distroless-libc']
 - version: 0.56.0
   kube: ['1.36', '1.35', '1.34']
   requirements: []
@@ -101,7 +108,7 @@ versions:
         complementing the existing instant utilization metrics.']
     breaking_changes: []
   chart_version: 0.50.0
-  images: ['timberio/vector:0.53.0-distroless-libc']
+  images: []
 - version: 0.52.0
   kube: ['1.34', '1.33', '1.32']
   requirements: []
@@ -287,7 +294,7 @@ versions:
         confirm whether any exist without the full 0.42.0 release notes content (changelog
         section).]
   chart_version: 0.37.0
-  images: ['timberio/vector:0.42.0-distroless-libc']
+  images: []
 - version: 0.41.0
   kube: ['1.31', '1.30', '1.29']
   requirements: []
@@ -459,7 +466,7 @@ versions:
   chart_version: 0.24.0
   images: ['timberio/vector:0.32.0-distroless-libc']
 - version: 0.31.0
-  kube: ['1.27', '1.26', '1.25']
+  kube: ['1.26', '1.25', '1.24']
   requirements: []
   incompatibilities: []
   summary:
@@ -556,7 +563,7 @@ versions:
         \ included beyond metadata/assets, so no breaking changes can be identified\
         \ from what was provided."]
   chart_version: 0.17.0
-  images: ['timberio/vector:0.25.1-distroless-libc']
+  images: []
 - version: 0.24.0
   kube: ['1.26', '1.25', '1.24']
   requirements: []
@@ -571,7 +578,7 @@ versions:
         Check the Vector 0.24.0 release page and any upgrade/breaking-changes section,
         and scan for config/schema changes that could affect existing Vector configs.']
   chart_version: 0.16.0
-  images: ['timberio/vector:0.24.0-distroless-libc']
+  images: []
 - version: 0.23.0
   kube: ['1.26', '1.25', '1.24']
   requirements: []

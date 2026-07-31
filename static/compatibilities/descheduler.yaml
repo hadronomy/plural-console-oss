@@ -460,7 +460,7 @@ versions:
         with older Kubernetes versions; validate your cluster version and API availability
         before upgrading.]
   chart_version: 0.21.0
-  images: ['alpine:latest', 'k8s.gcr.io/descheduler/descheduler:v0.21.0']
+  images: ['k8s.gcr.io/descheduler/descheduler:v0.21.0']
 - version: 0.20.0
   kube: ['1.20', '1.19', '1.18']
   requirements: []
