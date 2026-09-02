@@ -367,8 +367,7 @@ versions:
         to alternatives (e.g., PSA + RBAC).', '**Legacy GeoIP removed:** GeoIP (legacy)
         support is dropped; only GeoIP2 is supported.']
   chart_version: 4.10.0
-  images: ['registry.k8s.io/ingress-nginx/controller:v1.10.0@sha256:42b3f0e5d0846876b1791cd3afeb5f1cbbe4259d6f35651dcc1b5c980925379c',
-    'registry.k8s.io/ingress-nginx/kube-webhook-certgen:v1.4.0@sha256:44d1d0e9f19c63f58b380c5fddaca7cf22c7cee564adeff365225a5df5ef3334']
+  images: []
 - version: 1.9.6
   kube: ['1.29', '1.28', '1.27', '1.26', '1.25']
   requirements: []
